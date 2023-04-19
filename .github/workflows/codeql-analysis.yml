@@ -3,15 +3,14 @@ name: "Code scanning - action"
 on:
   push:
     branches:
-      - master
-#  pull_request:
-  schedule:
-    - cron: '0 0 * * 1'
+      - all
+  pull_request:
+  
 
 jobs:
   CodeQL-Build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout repository
